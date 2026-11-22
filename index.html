@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To My Favourite Person ♡</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- WELCOME SCREEN -->
+    <section id="welcome" class="welcome">
+      <div class="welcome-card">
+        <div class="floating-heart">♡</div>
+
+        <p class="small-text">A little something made with love</p>
+
+        <h1>To my favourite person</h1>
+
+        <p>I've made a little world just for us.</p>
+
+        <p class="password-hint">But first... do you know our secret? ♡</p>
+
+        <input
+          type="password"
+          id="secret-password"
+          placeholder="Enter our secret word"
+        />
+
+        <button onclick="enterWebsite()">Unlock my gift ♡</button>
+
+        <p id="password-feedback"></p>
+      </div>
+    </section>
+
+    <!-- MAIN WEBSITE -->
+    <main id="main-content" class="hidden">
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#story">Our story</a>
+        <a href="#reasons">Reasons</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#letter">My letter</a>
+        <a href="#gallery">Gallery</a>
+      </nav>
+
+      <!-- HOME -->
+      <section id="home" class="hero">
+        <p class="small-text">To my favourite human ♡</p>
+        <h1>Happy Anniversary!</h1>
+        <p class="hero-text">
+          Every love story is beautiful, but ours is my favourite.
+        </p>
+        <a href="#story" class="button-link">Explore our little world ↓</a>
+      </section>
+
+      <!-- OUR STORY -->
+      <section id="story" class="section">
+        <h2>Our little story ♡</h2>
+        <p class="subtitle">Some of my favourite moments with you.</p>
+
+        <div class="timeline">
+          <div class="memory">
+            <span class="heart">♡</span>
+            <h3>The beginning</h3>
+            <p>Replace this with how you first met or started talking.</p>
+          </div>
+
+          <div class="memory">
+            <span class="heart">♡</span>
+            <h3>A favourite memory</h3>
+            <p>Write about one of your favourite moments together.</p>
+          </div>
+
+          <div class="memory">
+            <span class="heart">♡</span>
+            <h3>When I knew</h3>
+            <p>
+              Tell him about a moment when you realised how much he meant to
+              you.
+            </p>
+          </div>
+
+          <div class="memory">
+            <span class="heart">♡</span>
+            <h3>Today</h3>
+            <p>And here we are, making even more memories. ♡</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- OUR PICTURES -->
+      <section id="gallery" class="section">
+        <h2>Little pieces of us ♡</h2>
+        <p class="subtitle">Some moments I wish I could relive forever.</p>
+
+        <div class="gallery">
+          <div class="polaroid" onclick="flipCard(this)">
+            <div class="polaroid-inner">
+              <div class="polaroid-front">
+                <img src="images/photo1.jpg" alt="Our memory" />
+                <p>My favourite smile ♡</p>
+              </div>
+              <div class="polaroid-back">
+                <p>Every time I look at you, I fall a little more. ♡</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="polaroid" onclick="flipCard(this)">
+            <div class="polaroid-inner">
+              <div class="polaroid-front">
+                <img src="images/photo2.jpg" alt="Our memory" />
+                <p>A day to remember ♡</p>
+              </div>
+              <div class="polaroid-back">
+                <p>I wish I could pause moments like this. ♡</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="polaroid" onclick="flipCard(this)">
+            <div class="polaroid-inner">
+              <div class="polaroid-front">
+                <img src="images/photo3.jpg" alt="Our memory" />
+                <p>Us being us ♡</p>
+              </div>
+              <div class="polaroid-back">
+                <p>My favourite duo. My favourite people — us. ♡</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- REASONS -->
+      <section id="reasons" class="section">
+        <h2>Reasons I love you ♡</h2>
+        <p class="subtitle">Tap the heart. I have a few things to tell you.</p>
+
+        <div class="reason-card">
+          <div id="big-heart" onclick="showReason()">♡</div>
+          <p id="reason-text">Click my heart!</p>
+          <button onclick="showReason()">Another reason ♡</button>
+        </div>
+      </section>
+
+      <!-- QUIZ -->
+      <section id="quiz" class="section">
+        <h2>How well do you know us? ♡</h2>
+
+        <div class="quiz-card">
+          <p id="quiz-question">Question goes here</p>
+          <div id="quiz-options"></div>
+          <p id="quiz-feedback"></p>
+          <button id="next-question" onclick="nextQuestion()" class="hidden">
+            Next question ♡
+          </button>
+        </div>
+      </section>
+
+      <!-- BUCKET LIST -->
+      <section id="bucket-list" class="section">
+        <h2>Things I want to do with you ♡</h2>
+        <p class="subtitle">A little list of adventures waiting for us.</p>
+
+        <div class="bucket-card">
+          <label><input type="checkbox" /> Watch the sunset together</label>
+          <label><input type="checkbox" /> Take cute pictures together</label>
+          <label><input type="checkbox" /> Have a movie night</label>
+          <label><input type="checkbox" /> Travel somewhere together</label>
+          <label><input type="checkbox" /> Cook a meal together</label>
+          <label><input type="checkbox" /> Go on our dream date</label>
+          <label><input type="checkbox" /> Make more memories</label>
+          <label><input type="checkbox" /> Grow old together</label>
+        </div>
+      </section>
+
+      <!-- LETTER -->
+      <section id="letter" class="section">
+        <h2>A letter for you ♡</h2>
+        <p class="subtitle">Something I don't think I'll ever say enough.</p>
+
+        <div class="envelope" onclick="openLetter()">
+          <div id="envelope-icon">💌</div>
+          <p id="envelope-text">Click to open your letter</p>
+        </div>
+
+        <div id="love-letter" class="letter hidden">
+          <p>My love,</p>
+
+          <p>
+            Happy anniversary, baby. I don't think words will ever fully explain
+            how much you mean to me, but I want to try.
+          </p>
+
+          <p>
+            Thank you for being part of my life, for the memories we've made,
+            for the laughter, for the little moments and for simply being you.
+          </p>
+
+          <p>
+            I hope we get to make so many more memories, grow together, learn
+            together and love each other through all the seasons of life.
+          </p>
+
+          <p>
+            If I had to choose all over again, I'd still choose you. Always. ♡
+          </p>
+
+          <p>Forever yours,</p>
+          <p>Me ♡</p>
+        </div>
+      </section>
+
+      <!-- FINAL SURPRISE -->
+      <section id="surprise" class="section final-section">
+        <h2>One last thing... ♡</h2>
+        <button onclick="finalSurprise()">Click for a surprise</button>
+        <p id="final-message" class="final-message"></p>
+      </section>
+
+      <footer>
+        <p>Made with love, just for you ♡</p>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
